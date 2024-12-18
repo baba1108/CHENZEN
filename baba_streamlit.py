@@ -20,11 +20,6 @@ response = requests.get(file_url)
 dataset = io.stringIO(response.text)
 
 
-
-
-# Lire le fichier CSV dans un DataFrame pandas
-data = pd.read_csv('Expresso_churn_dataset.csv')
-st.dataframe(data.head())
 st.markdown("""
     <style>
         /* Couleur de fond de la page */
@@ -66,6 +61,11 @@ st.sidebar.title("Options")
 show_data = st.sidebar.checkbox("Afficher les données", value=True)
 show_histograms = st.sidebar.checkbox("Afficher les histogrammes", value=True)
 show_model_evaluation = st.sidebar.checkbox("Afficher l'évaluation du modèle", value=True)
+
+
+# Lire le fichier CSV dans un DataFrame pandas
+data = pd.read_csv('Expresso_churn_dataset.csv')
+st.dataframe(data.head())
 
 
 # Afficher les 5 premières lignes du DataFrame
