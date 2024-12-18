@@ -11,7 +11,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.preprocessing import LabelEncoder
 import requests
-import io
+from io import BytesIO
 
 #URL du fichier CSV
 file_url ='https://drive.google.com/uc?export=download&id=1mFgByuwFgTUxGvfDtXGKaCi2oxfsiREw'
