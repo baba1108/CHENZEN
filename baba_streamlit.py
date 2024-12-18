@@ -10,6 +10,14 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.preprocessing import LabelEncoder
+import requests
+import io
+
+#URL du fichier CSV
+file_url ='https://drive.google.com/uc?export=download&id=1mFgByuwFgTUxGvfDtXGKaCi2oxfsiREw'
+#telecharger le fichier
+response = requests.get(file_url)
+dataset = io.stringIO(response.text)
 
 st.markdown("""
     <style>
