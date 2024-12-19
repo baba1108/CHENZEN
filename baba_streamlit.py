@@ -64,11 +64,11 @@ show_histograms = st.sidebar.checkbox("Afficher les histogrammes", value=True)
 show_model_evaluation = st.sidebar.checkbox("Afficher l'évaluation du modèle", value=True)
 
 
-# Lire le fichier CSV dans un DataFrame pandas
-st.dataframe(data.head())
+
 
 
 # Afficher les 5 premières lignes du DataFrame
+st.dataframe(data.head())
 st.write("Aperçu du Dataset :")
 st.write("Informations du dataset :")
 st.text(data.info())
