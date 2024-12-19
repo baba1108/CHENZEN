@@ -11,15 +11,16 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.preprocessing import LabelEncoder
 import requests
+import io  
 from io import StringIO
 
 
 #URL du fichier CSV
 file_url ='https://drive.google.com/uc?export=download&id=1mFgByuwFgTUxGvfDtXGKaCi2oxfsiREw'
-
 #telecharger le fichier
 response = requests.get(file_url)
-data = pd.read_csv(StringIO(response.text))
+dataset = io.stringIO(response.text)
+
 
 st.markdown("""
     <style>
@@ -64,11 +65,12 @@ show_histograms = st.sidebar.checkbox("Afficher les histogrammes", value=True)
 show_model_evaluation = st.sidebar.checkbox("Afficher l'évaluation du modèle", value=True)
 
 
-
+# Lire le fichier CSV dans un DataFrame pandas
+data = pd.read_csv('Expresso_churn_dataset.csv')
+st.dataframe(data.head())
 
 
 # Afficher les 5 premières lignes du DataFrame
-st.dataframe(data.head())
 st.write("Aperçu du Dataset :")
 st.write("Informations du dataset :")
 st.text(data.info())
