@@ -11,17 +11,15 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.preprocessing import LabelEncoder
 import requests
-
+from io import StringIO
 
 
 #URL du fichier CSV
 file_url ='https://drive.google.com/uc?export=download&id=1mFgByuwFgTUxGvfDtXGKaCi2oxfsiREw'
-data = pd.read_csv(file_url)
 
 #telecharger le fichier
 response = requests.get(file_url)
-dataset = io.stringIO(response.text)
-
+data = pd.read_csv(StringIO(response.text))
 
 st.markdown("""
     <style>
