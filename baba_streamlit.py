@@ -65,7 +65,6 @@ show_model_evaluation = st.sidebar.checkbox("Afficher l'évaluation du modèle",
 
 
 # Lire le fichier CSV dans un DataFrame pandas
-data = pd.read_csv('Expresso_churn_dataset.csv')
 st.dataframe(data.head())
 
 
