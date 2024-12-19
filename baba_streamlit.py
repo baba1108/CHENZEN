@@ -19,7 +19,7 @@ from io import StringIO
 file_url ='https://drive.google.com/uc?export=download&id=1mFgByuwFgTUxGvfDtXGKaCi2oxfsiREw'
 #telecharger le fichier
 response = requests.get(file_url)
-data = pd.read_csv(StringIO(response.text), on_bad_lines='skip'))
+data = pd.read_csv(StringIO(response.text), on_bad_lines='skip')
 
 st.markdown("""
     <style>
