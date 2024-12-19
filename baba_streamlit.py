@@ -13,6 +13,8 @@ from sklearn.preprocessing import LabelEncoder
 import requests
 import io  
 
+file = io.StringIO()
+
 
 #URL du fichier CSV
 file_url ='https://drive.google.com/uc?export=download&id=1mFgByuwFgTUxGvfDtXGKaCi2oxfsiREw'
